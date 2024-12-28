@@ -1,0 +1,23 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "kaiyicode-api",
+      "image": "kaiyicode/kaiyicode-api:1.0-SNAPSHOT",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ],
+      "environment": [
+        {
+          "name": "SPRING_DATASOURCE_URL",
+          "value":"jdbc:postgresql://awseb-e-pmdjcfpd3u-stack-awsebrdsdatabase-rwubbanp9aui.cjwgaou4qw8t.eu-north-1.rds.amazonaws.com:5432/customer"
+        }
+      ]
+    }
+  ]
+}
