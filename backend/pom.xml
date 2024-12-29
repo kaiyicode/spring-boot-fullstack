@@ -194,9 +194,9 @@
 					</from>
 					<to>
 						<image>docker.io/${project.organization.name}/${project.artifactId}:${project.version}</image>
-<!--						<tages>-->
-<!--							<tag>latest</tag>-->
-<!--						</tages>-->
+						<tags>
+							<tag>latest</tag>
+						</tags>
 					</to>
 				</configuration>
 				<executions>
