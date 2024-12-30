@@ -55,7 +55,7 @@ jobs:
         run: |
           echo "Dockerrun.aws.json before updating tag"
           cat Dockerrun.aws.json
-          sed -i -E 's_(kaiyicode/kaiyicode-api:)([^"]*)_\1'${{ steps.builder-number.outputs.BUILD_NUMBER }}'_' Dokerrun.aws.json
+          sed -i -E 's_(kaiyicode/kaiyicode-api:)([^"]*)_\1'${{ steps.builder-number.outputs.BUILD_NUMBER }}'_' Dockerrun.aws.json
           echo "Dockerrun.aws.json after updating tag"
           cat Dockerrun.aws.json
 
