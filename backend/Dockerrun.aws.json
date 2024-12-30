@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "kaiyicode-api",
-      "image": "kaiyicode/kaiyicode-api",
+      "image": "kaiyicode/kaiyicode-api:latest",
       "essential": true,
       "memory": 512,
       "portMappings": [
