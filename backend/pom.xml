@@ -180,7 +180,7 @@
 				<version>3.4.4</version>
 				<configuration>
 					<from>
-						<image>eclipse-temurin:17</image>
+						<image>eclipse-temurin:21</image>
 						<platforms>
 							<platform>
 								<architecture>arm64</architecture>
@@ -194,9 +194,9 @@
 					</from>
 					<to>
 						<image>docker.io/${project.organization.name}/${project.artifactId}:${project.version}</image>
-<!--						<tages>-->
-<!--							<tag>latest</tag>-->
-<!--						</tages>-->
+						<tags>
+							<tag>latest</tag>
+						</tags>
 					</to>
 				</configuration>
 				<executions>
