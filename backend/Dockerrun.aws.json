@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "kaiyicode-api",
-      "image": "kaiyicode1/kaiyicode-api:01.01.2025.12.03.02",
+      "image": "kaiyicode1/kaiyicode-api:latest",
       "essential": true,
       "memory": 512,
       "portMappings": [
@@ -15,7 +15,7 @@
       "environment": [
         {
           "name": "SPRING_DATASOURCE_URL",
-          "value":"jdbc:postgresql://awseb-e-pmdjcfpd3u-stack-awsebrdsdatabase-rwubbanp9aui.cjwgaou4qw8t.eu-north-1.rds.amazonaws.com:5432/customer"
+          "value":"jdbc:postgresql://awseb-e-fnp8ng22w3-stack-awsebrdsdatabase-brgrtjchg6ue.cjwgaou4qw8t.eu-north-1.rds.amazonaws.com:5432/customer"
         }
       ]
     }
