@@ -30,7 +30,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
-		<docker.username>kaiyicode</docker.username>
+		<docker.username>kaiyicode1</docker.username>
 		<docker.image.name>kaiyicode-api</docker.image.name>
 		<docker.image.tag/>
 
