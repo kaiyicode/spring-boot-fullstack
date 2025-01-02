@@ -59,7 +59,7 @@ jobs:
       - name: Send Slack Message
         run: >
           curl && curl -X POST -H 'Content-type: application/json' 
-          --date '
+          --data '
             {"text":":maven: Building with Maven"}
           ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}$
@@ -70,7 +70,7 @@ jobs:
       - name: Send Slack Message
         run: >
           curl && curl -X POST -H 'Content-type: application/json' 
-          --date '
+          --data '
             {"text":":docker: Image tag:${{ steps.builder-number.outputs.BUILD_NUMBER }} pushed to https://hub.docker.com/repository/docker/kaiyicode1/kaiyicode-api"}
           ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}$
@@ -86,7 +86,7 @@ jobs:
       - name: Send Slack Message
         run: >
           curl && curl -X POST -H 'Content-type: application/json' 
-          --date '
+          --data '
             {"text":":aws: Starting deployment to Elastic Beanstalk"}
           ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}$
@@ -106,7 +106,7 @@ jobs:
       - name: Send Slack Message
         run: >
           curl && curl -X POST -H 'Content-type: application/json' 
-          --date '
+          --data '
             {"text":":githubloading: Committing to repo https://github.com/kaiyicode/spring-boot-fullstack"}
           ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}$
@@ -123,7 +123,7 @@ jobs:
       - name: Send Slack Message
         run: >
           curl && curl -X POST -H 'Content-type: application/json' 
-          --date '
+          --data '
             {"text":"Deployment and commit completed :github_check_mark: :party_blob: - ${{ secrets.EB_ENVIRONMENT_URL }}"}
           ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -132,7 +132,7 @@ jobs:
         if: always()
         run: >
           curl && curl -X POST -H 'Content-type: application/json' 
-          --date '
+          --data '
             {"text":"Job Status ${{ job.status }}"}
           ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}$
