@@ -3,6 +3,7 @@ package com.kaiyicode.customer;
 public record CustomerRegistrationRequest(
         String name,
         String email,
-        int age
+        int age,
+        Gender gender
 ) {
 }

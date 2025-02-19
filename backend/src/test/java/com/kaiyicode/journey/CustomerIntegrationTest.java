@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import com.kaiyicode.customer.Customer;
 import com.kaiyicode.customer.CustomerRegistrationRequest;
 import com.kaiyicode.customer.CustomerUpdateRequest;
+import com.kaiyicode.customer.Gender;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -36,9 +37,10 @@ public class CustomerIntegrationTest {
         String name = firstName + " " + lastName;
         String email = firstName + "." + lastName + "-" + UUID.randomUUID() + "@gmail.com";
         int age = RANDOM.nextInt(16, 99);
+        Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
 
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                name, email, age
+                name, email, age, gender
         );
 
         // send a post request
@@ -61,7 +63,7 @@ public class CustomerIntegrationTest {
                 .getResponseBody();
 
         Customer expectedCustomer = new Customer(
-                request.name(), request.email(), request.age()
+                request.name(), request.email(), request.age(), request.gender()
         );
 
         // make sure that customer is present
@@ -96,9 +98,10 @@ public class CustomerIntegrationTest {
         String name = firstName + " " + lastName;
         String email = firstName + "." + lastName + "-" + UUID.randomUUID() + "@gmail.com";
         int age = RANDOM.nextInt(16, 99);
+        Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
 
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                name, email, age
+                name, email, age, gender
         );
 
         // send a post request
@@ -151,9 +154,10 @@ public class CustomerIntegrationTest {
         String name = firstName + " " + lastName;
         String email = firstName + "." + lastName + "-" + UUID.randomUUID() + "@gmail.com";
         int age = RANDOM.nextInt(16, 99);
+        Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
 
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                name, email, age
+                name, email, age, gender
         );
 
         // send a post request
@@ -202,7 +206,7 @@ public class CustomerIntegrationTest {
 
         // get customer by id
         Customer expectedCustomer = new Customer(
-                id, newName, newEmail, newAge
+                id, newName, newEmail, newAge, gender
         );
         webClient.get()
                 .uri(CUSTOMER_URI + "/" + id)
