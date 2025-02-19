@@ -33,6 +33,7 @@ public class Main {
                     age,
                     gender);
             customerRepository.save(customer);
+
         };
     }
 }
