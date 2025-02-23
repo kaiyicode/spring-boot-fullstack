@@ -2,13 +2,25 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
+      "name": "kaiyicode-react",
+      "image": "kaiyicode1/kaiyicode-react:latest",
+      "essential": true,
+      "memory": 256,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 5173
+        }
+      ]
+    },
+    {
       "name": "kaiyicode-api",
       "image": "kaiyicode1/kaiyicode-api:19.02.2025.11.08.55",
       "essential": true,
       "memory": 512,
       "portMappings": [
         {
-          "hostPort": 80,
+          "hostPort": 8080,
           "containerPort": 8080
         }
       ],
