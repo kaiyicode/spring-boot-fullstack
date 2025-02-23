@@ -47,7 +47,7 @@ jobs:
           REPO=kaiyicode-react \
           TAG=${{ steps.builder-number.outputs.BUILD_NUMBER }} \
           ../../.ci/build-publish.sh . \
-          --build-arg api_base_url=https://kaiyicode-api-v3-env.eba-dedtjmmh.eu-north-1.elasticbeanstalk.com:8080
+          --build-arg api_base_url=http://kaiyicode-api-v3-env.eba-dedtjmmh.eu-north-1.elasticbeanstalk.com:8080
 
       - name: Send Slack Message
         run: >
